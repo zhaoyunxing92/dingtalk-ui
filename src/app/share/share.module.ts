@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AntdModule} from "./antd/antd.module";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
-  imports: [CommonModule],
-  exports: [CommonModule, AntdModule]
+  exports: [CommonModule, RouterModule, AntdModule]
 })
 export class ShareModule {
 }

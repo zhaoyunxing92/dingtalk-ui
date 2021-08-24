@@ -1,19 +1,10 @@
 import {NgModule} from '@angular/core';
-import {WelcomeComponent} from './welcome/welcome.component';
-import {ShareModule} from "../share/share.module";
-import { ApproveComponent } from './approve/approve.component';
-import {RouterModule} from "@angular/router";
+import {MandateModule} from "./mandate/mandate.module";
+import {WelcomeModule} from "./welcome/welcome.module";
 
 
 @NgModule({
-  declarations: [
-    WelcomeComponent,
-    ApproveComponent,
-  ],
-  imports: [
-    ShareModule,
-    RouterModule,
-  ]
+  exports: [MandateModule, WelcomeModule]
 })
 export class PagesModule {
 }
