@@ -1,17 +1,18 @@
 import {NgModule} from '@angular/core';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {ShareModule} from "../share/share.module";
-import {NzGridModule} from "ng-zorro-antd/grid";
-import {NzCardModule} from "ng-zorro-antd/card";
-import {NzDividerModule} from "ng-zorro-antd/divider";
+import { ApproveComponent } from './approve/approve.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
   declarations: [
     WelcomeComponent,
+    ApproveComponent,
   ],
   imports: [
     ShareModule,
+    RouterModule,
   ]
 })
 export class PagesModule {
