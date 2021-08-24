@@ -2,17 +2,17 @@
   <nz-divider nzOrientation="left" nzText="授权"></nz-divider>
   <div nz-row [nzGutter]="[16, 24]">
     <div nz-col [nzXs]="{ span: 24}" [nzLg]="{ span: 8}">
-      <nz-card nzTitle="授权获取审批实例数据">
+      <nz-card nzHoverable nzTitle="授权获取审批实例数据">
         调用biz.auth.requestAuthInfo唤起授权弹窗，提示用户授权，当用户点击确认按钮后，就可以有权限获取企业审批模板的审批数据
       </nz-card>
     </div>
     <div nz-col [nzXs]="{ span: 24}" [nzLg]="{ span: 8}">
-      <nz-card nzTitle="获取用户授权">
+      <nz-card nzHoverable nzTitle="获取用户授权">
         调用biz.auth.requestAuthInfo唤起授权弹窗，获取用户授权
       </nz-card>
     </div>
     <div nz-col [nzXs]="{ span: 24 }" [nzLg]="{ span: 8}">
-      <nz-card nzTitle="发单聊消息授权">
+      <nz-card nzHoverable nzTitle="发单聊消息授权">
         调用biz.auth.requestAuthInfo唤起授权弹窗，发单聊消息授权
       </nz-card>
     </div>
