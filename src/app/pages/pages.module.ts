@@ -12,7 +12,6 @@ import {NzDividerModule} from "ng-zorro-antd/divider";
   ],
   imports: [
     ShareModule,
-    NzDividerModule,
   ]
 })
 export class PagesModule {
