@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {DingTalkService} from "../../service/dingtalk.service";
+import {NzNotificationService} from "ng-zorro-antd/notification";
 import * as dd from 'dingtalk-jsapi';
 
 @Component({
@@ -9,10 +10,8 @@ import * as dd from 'dingtalk-jsapi';
 })
 export class WelcomeComponent {
 
-  constructor(private dingTalkService: DingTalkService) {
+  constructor(private dingTalkService: DingTalkService, private notification: NzNotificationService) {
     this.dingTalkService.getConfig("dingc7c5220402493357f2c783f7214b6d69").subscribe(conf => {
-
-      console.log('res',conf)
       dd.config({
         agentId: conf?.agentId, // 必填，微应用ID
         corpId: conf?.corpId,//必填，企业ID
@@ -23,8 +22,7 @@ export class WelcomeComponent {
         jsApiList: conf?.apis
       });
       dd.error(err => {
-        console.log(err)
-        alert('dd error: '+ err);
+        this.notification.error("钉钉环境初始化异常", `${err.errorMessage || '请在钉钉环境下打开'}`)
       });
     });
   }
