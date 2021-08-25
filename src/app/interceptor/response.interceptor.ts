@@ -6,13 +6,15 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {NzNotificationService} from "ng-zorro-antd/notification";
 
 @Injectable()
 export class ResponseInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private notification: NzNotificationService) {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+  intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<Res<any>>> {
+    this.notification.error('接口异常','我就想弹出')
+    return next.handle(req);
   }
 }
