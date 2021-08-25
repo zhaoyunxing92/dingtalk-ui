@@ -9,7 +9,6 @@ import {NZ_I18N, zh_CN} from "ng-zorro-antd/i18n";
 import {registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {PagesModule} from "../pages/pages.module";
-import {ShareModule} from "../share/share.module";
 import {RouterModule} from "@angular/router";
 import {LoggingInterceptor} from "../interceptor/logging.interceptor";
 import {ResponseInterceptor} from "../interceptor/response.interceptor";
@@ -24,7 +23,7 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     RouterModule.forRoot([])
   ],
-  exports: [ShareModule, PagesModule],
+  exports: [PagesModule],
   providers: [
     {provide: NZ_I18N, useValue: zh_CN},
     {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true},
