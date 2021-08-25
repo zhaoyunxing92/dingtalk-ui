@@ -11,12 +11,9 @@ import {finalize, tap} from "rxjs/operators";
 @Injectable()
 export class LoggingInterceptor implements HttpInterceptor {
 
-  constructor() {}
-
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const started = Date.now();
     let ok: string;
-
     // extend server response observable with logging
     return next.handle(req)
       .pipe(

@@ -10,8 +10,9 @@ import * as dd from 'dingtalk-jsapi';
 export class WelcomeComponent {
 
   constructor(private dingTalkService: DingTalkService) {
-    this.dingTalkService.getConfig().subscribe(res => {
-      const conf = res.data
+    this.dingTalkService.getConfig("dingc7c5220402493357f2c783f7214b6d69").subscribe(conf => {
+
+      console.log('res',conf)
       dd.config({
         agentId: conf?.agentId, // 必填，微应用ID
         corpId: conf?.corpId,//必填，企业ID
