@@ -1,10 +1,10 @@
 class Res<T> {
 
-  msg: string | undefined
+  msg?: string
 
-  code: number | undefined
+  code?: number
 
-  succeed: boolean | undefined
+  succeed?: boolean
 
-  data: T | undefined
+  data?: T
 }
