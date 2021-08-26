@@ -18,4 +18,15 @@ export class DingTalkService {
     const url = `/dingtalk/dd/config/${corpId}`;
     return this.http.get<Res<DingConfig>>(url).pipe(map<Res<DingConfig>, DingConfig>(res => res.data || {}));
   }
+
+  /**
+   * 获取用户信息
+   * @param corpId 企业id
+   * @param code 临时授权码
+   */
+  getUserInfo(corpId: string, code: string): Observable<UserDetail> {
+    const url = `/dingtalk/user/detail?corpId=${corpId}&code=${code}`;
+    return this.http.get<Res<UserDetail>>(url).pipe(map<Res<UserDetail>, UserDetail>(res => res.data || {}));
+  }
 }
+
