@@ -20,7 +20,6 @@ export class ResponseInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<Res<any>>> {
 
     return next.handle(req).pipe(
-      retry(3),
       tap(
         res => {
           if (res instanceof HttpResponse) {

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DingTalkService} from "../../service/dingtalk.service";
 import {NzNotificationService} from "ng-zorro-antd/notification";
 import * as dd from 'dingtalk-jsapi';
@@ -11,13 +11,19 @@ import {IRuntimePermissionRequestAuthCodeResult} from "dingtalk-jsapi/api/runtim
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.less']
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnInit {
+  /**
+   * 用户详情
+   */
+  userDetail: UserDetail = {}
 
   constructor(private dingTalkService: DingTalkService, private notification: NzNotificationService,
               private route: ActivatedRoute) {
+  }
 
+  ngOnInit(): void {
     this.route.params.pipe(map(params => params.corpId)).subscribe(corpId => {
-      this.initDingTalk(corpId)
+      //this.initDingTalk(corpId)
       this.getUserInfo(corpId)
     });
   }
@@ -50,9 +56,11 @@ export class WelcomeComponent {
   getUserInfo(corpId: string): void {
     dd.ready(() => {
       dd.runtime.permission.requestAuthCode({corpId: corpId})
-        .then((res:IRuntimePermissionRequestAuthCodeResult)=>{
-        this.dingTalkService.getUserInfo(corpId,res.code)
-      });
+        .then((res: IRuntimePermissionRequestAuthCodeResult) => {
+          this.dingTalkService.getUserInfo(corpId, res.code).subscribe(userDetail => {
+            this.userDetail = userDetail
+          })
+        });
     });
   }
 }
