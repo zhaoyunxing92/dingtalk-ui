@@ -10,6 +10,16 @@ import {NzMenuModule} from "ng-zorro-antd/menu";
 import {NzAvatarModule} from "ng-zorro-antd/avatar";
 import {NzButtonModule} from "ng-zorro-antd/button";
 
+import {NzConfig, NZ_CONFIG} from 'ng-zorro-antd/core/config';
+
+/**
+ * <a href="https://ng.ant.design/docs/global-config/zh">全局配置</a>
+ */
+const config: NzConfig = {
+  message: {nzMaxStack: 3},
+  notification: {nzMaxStack: 3}
+};
+
 @NgModule({
   exports: [
     NzGridModule,
@@ -22,7 +32,10 @@ import {NzButtonModule} from "ng-zorro-antd/button";
     NzMenuModule,
     NzAvatarModule,
     NzButtonModule,
-  ]
+  ],
+  providers: [
+    {provide: NZ_CONFIG, useValue: {config}}
+  ],
 })
 export class AntdModule {
 }

@@ -59,9 +59,17 @@ export class WelcomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.pipe(map(params => params.corpId)).subscribe(corpId => {
-     // this.initDingTalk(corpId)
-      this.getUserInfo(corpId)
+    this.route.queryParams.pipe(map(params => params.corpId)).subscribe(corpId => {
+      if (corpId) {
+        this.initDingTalk(corpId)
+        this.getUserInfo(corpId)
+      } else {
+        const url = location.href
+        this.notification.warning(
+          "企业id为空",
+          `请先在路由上指定企业id。eg：${url}?corpId=xxx`,
+          {nzDuration: 0})
+      }
     });
   }
 
@@ -81,7 +89,10 @@ export class WelcomeComponent implements OnInit {
         jsApiList: conf.apis
       });
       dd.error(err => {
-        this.notification.error("钉钉环境初始化异常", `${err.errorMessage || '请在钉钉环境下打开'}`)
+        this.notification.error(
+          "钉钉环境初始化异常",
+          `${err.errorMessage || '请在钉钉环境下打开'}`,
+          {nzDuration: 0})
       });
     });
   }
