@@ -1,7 +1,7 @@
 /**
  * dd.config中所有的参数必须直接来自服务端
  */
-class DingConfig {
+export class DingConfig {
 
   /**
    * 必填，微应用ID

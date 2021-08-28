@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {DingTalkService} from "../../service/dingtalk.service";
 import {NzNotificationService} from "ng-zorro-antd/notification";
 import {map} from "rxjs/operators";
+import {UserInfo} from "../../domain/user.info";
 
 @Component({
   selector: 'app-sso',
@@ -11,7 +12,7 @@ import {map} from "rxjs/operators";
 })
 export class SsoComponent implements OnInit {
 
-  userDetail: UserDetail = {}
+  userInfo: UserInfo = {}
 
   constructor(private dingTalkService: DingTalkService, private notification: NzNotificationService,
               private route: ActivatedRoute) {
@@ -20,8 +21,9 @@ export class SsoComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.pipe(map(params => params.code)).subscribe(code => {
       if (code) {
-        this.dingTalkService.ssoLogin(code).subscribe(user => {
-          this.userDetail = user;
+        this.dingTalkService.ssoLogin(code).subscribe(userInfo => {
+          this.userInfo = userInfo
+          console.log(userInfo)
         })
       } else {
         this.notification.warning(

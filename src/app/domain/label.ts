@@ -3,7 +3,7 @@
  * @email 2385585770@qq.com
  * @date: 2021-08-28 01:46
  */
-class Label {
+export class Label {
   /**
    * 标签名称
    */

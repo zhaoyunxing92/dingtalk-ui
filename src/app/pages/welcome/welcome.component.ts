@@ -5,6 +5,8 @@ import * as dd from 'dingtalk-jsapi';
 import {ActivatedRoute} from "@angular/router";
 import {map} from "rxjs/operators";
 import {IRuntimePermissionRequestAuthCodeResult} from "dingtalk-jsapi/api/runtime/permission/requestAuthCode";
+import {Label} from "../../domain/label";
+import {UserDetail} from "../../domain/user.detail";
 
 @Component({
   selector: 'app-welcome',

@@ -1,7 +1,7 @@
 /**
  * 接口返回
  */
-class Res<T> {
+export class Res<T> {
 
   /**
    * msg 消息

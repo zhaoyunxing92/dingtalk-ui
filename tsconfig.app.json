@@ -8,13 +8,8 @@
   "files": [
     "src/main.ts",
     "src/polyfills.ts",
-    "src/app/domain/user.detail.type.ts",
-    "src/app/domain/response.type.ts",
-    "src/app/domain/ding.config.type.ts",
-    "src/app/domain/label.type.ts"
   ],
   "include": [
     "src/**/*.d.ts",
-    "src/app/domain/*.d.ts"
   ]
 }

@@ -1,7 +1,7 @@
 /**
  * 用户详情信息
  */
-class UserDetail {
+export class UserDetail {
 
   /**
    * 用户id
