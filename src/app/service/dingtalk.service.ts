@@ -15,7 +15,7 @@ export class DingTalkService {
    * 获取钉钉config
    */
   getConfig(corpId: string): Observable<DingConfig> {
-    const url = `/dingtalk/dd/config/${corpId}`;
+    const url = `/dingtalk/dd/config?corpId=${corpId}`;
     return this.http.get<Res<DingConfig>>(url).pipe(map<Res<DingConfig>, DingConfig>(res => res.data || {}));
   }
 
