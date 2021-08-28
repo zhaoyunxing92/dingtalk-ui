@@ -16,14 +16,51 @@ export class WelcomeComponent implements OnInit {
    * 用户详情
    */
   userDetail: UserDetail = {}
+  /**
+   * 标签
+   */
+  labels: Label[] = []
 
   constructor(private dingTalkService: DingTalkService, private notification: NzNotificationService,
               private route: ActivatedRoute) {
+
+    this.labels = [
+      {
+        name: "免登",
+        path: "/login",
+        desc: "钉钉免登相关操作"
+      },
+      {
+        name: "设备",
+        path: "/login",
+        desc: "钉钉免登相关操作"
+      }, {
+        name: "会话",
+        path: "/chat",
+        desc: "钉钉免登相关操作"
+      }, {
+        name: "授权",
+        path: "/mandate",
+        desc: "钉钉免登相关操作"
+      }, {
+        name: "自定义联系人",
+        path: "/login",
+        desc: "钉钉免登相关操作"
+      }, {
+        name: "通讯录选人",
+        path: "/login",
+        desc: "钉钉免登相关操作"
+      }, {
+        name: "通讯录选人",
+        path: "/login",
+        desc: "钉钉免登相关操作"
+      }
+    ]
   }
 
   ngOnInit(): void {
     this.route.params.pipe(map(params => params.corpId)).subscribe(corpId => {
-      //this.initDingTalk(corpId)
+     // this.initDingTalk(corpId)
       this.getUserInfo(corpId)
     });
   }

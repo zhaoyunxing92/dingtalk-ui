@@ -1,17 +1,10 @@
 <div class="app">
   <nz-layout>
     <nz-header>
-      <nz-avatar [nzSize]="45" nzIcon="user"></nz-avatar>
+      <nz-avatar [nzSize]="45"></nz-avatar>
     </nz-header>
     <nz-content class="app-content">
-      <div nz-row [nzGutter]="[16, 24]">
-        <div nz-col [nzXs]="{ span: 8}" [nzLg]="{ span: 6}" *ngFor="let label of labels">
-          <button nz-button nzType="primary" nzSize="large" nzBlock class="label-button">
-            <i nz-icon nzType="search"></i>
-            {{label.name}}
-          </button>
-        </div>
-      </div>
+      <router-outlet></router-outlet>
     </nz-content>
   </nz-layout>
 </div>
