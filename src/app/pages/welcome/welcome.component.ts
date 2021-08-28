@@ -62,7 +62,7 @@ export class WelcomeComponent implements OnInit {
     this.route.queryParams.pipe(map(params => params.corpId)).subscribe(corpId => {
       if (corpId) {
         this.initDingTalk(corpId)
-        this.getUserInfo(corpId)
+        //this.getUserInfo(corpId)
       } else {
         const url = location.href
         this.notification.warning(
@@ -85,7 +85,7 @@ export class WelcomeComponent implements OnInit {
         timeStamp: conf.timeStamp,
         nonceStr: conf.nonce,
         signature: conf.signature,
-        type: conf.type,
+        // type: conf.type,
         jsApiList: conf.apis
       });
       dd.error(err => {

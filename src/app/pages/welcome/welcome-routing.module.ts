@@ -8,7 +8,6 @@ const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: 'chat', component: ChatComponent},
   {path: 'mandate', component: MandateComponent},
-  {path: '**', component: WelcomeComponent},
 ];
 
 @NgModule({

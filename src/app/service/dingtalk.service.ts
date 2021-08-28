@@ -28,5 +28,14 @@ export class DingTalkService {
     const url = `/dingtalk/user/detail?corpId=${corpId}&code=${code}`;
     return this.http.get<Res<UserDetail>>(url).pipe(map<Res<UserDetail>, UserDetail>(res => res.data || {}));
   }
+
+  /**
+   * sso 获取用户信息
+   * @param code 临时授权码
+   */
+  ssoLogin(code: string): Observable<UserDetail> {
+    const url = `/dingtalk/sso/login?code=${code}`;
+    return this.http.get<Res<UserDetail>>(url).pipe(map<Res<UserDetail>, UserDetail>(res => res.data || {}));
+  }
 }
 
