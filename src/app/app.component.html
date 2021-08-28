@@ -1,14 +1,18 @@
-<div>
+<div class="app">
   <nz-layout>
     <nz-header>
-      <div class="logo"></div>
-      <ul nz-menu nzMode="horizontal">
-      </ul>
+      <nz-avatar [nzSize]="45" nzIcon="user"></nz-avatar>
     </nz-header>
-    <nz-content>
-      <div class="inner-content">Content</div>
+    <nz-content class="app-content">
+      <div nz-row [nzGutter]="[16, 24]">
+        <div nz-col [nzXs]="{ span: 8}" [nzLg]="{ span: 6}" *ngFor="let label of labels">
+          <button nz-button nzType="primary" nzSize="large" nzBlock class="label-button">
+            <i nz-icon nzType="search"></i>
+            {{label.name}}
+          </button>
+        </div>
+      </div>
     </nz-content>
-    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
   </nz-layout>
 </div>
 

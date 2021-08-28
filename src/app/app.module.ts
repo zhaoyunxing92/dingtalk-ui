@@ -8,10 +8,10 @@ import {ShareModule} from "./share/share.module";
   declarations: [
     AppComponent
   ],
-  imports: [
-    ShareModule,
-    CoreModule,
-  ],
+    imports: [
+        ShareModule,
+        CoreModule,
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

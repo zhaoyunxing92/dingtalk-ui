@@ -7,6 +7,8 @@ import {NzNotificationModule} from 'ng-zorro-antd/notification';
 import {NzLayoutModule} from "ng-zorro-antd/layout";
 import {NzBreadCrumbModule} from "ng-zorro-antd/breadcrumb";
 import {NzMenuModule} from "ng-zorro-antd/menu";
+import {NzAvatarModule} from "ng-zorro-antd/avatar";
+import {NzButtonModule} from "ng-zorro-antd/button";
 
 @NgModule({
   exports: [
@@ -18,6 +20,8 @@ import {NzMenuModule} from "ng-zorro-antd/menu";
     NzLayoutModule,
     NzBreadCrumbModule,
     NzMenuModule,
+    NzAvatarModule,
+    NzButtonModule,
   ]
 })
 export class AntdModule {
