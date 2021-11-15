@@ -64,7 +64,7 @@ export class WelcomeComponent implements OnInit {
     this.route.queryParams.pipe(map(params => params.corpId)).subscribe(corpId => {
       if (corpId) {
         this.initDingTalk(corpId)
-        //this.getUserInfo(corpId)
+        this.getUserInfo(corpId)
       } else {
         const url = location.href
         this.notification.warning(

@@ -29,7 +29,7 @@ export class DingTalkService {
    * @param code 临时授权码
    */
   getUserInfo(corpId: string, code: string): Observable<UserDetail> {
-    const url = `/dingtalk/user/detail?corpId=${corpId}&code=${code}`;
+    const url = `/dingtalk/login?corpId=${corpId}&code=${code}`;
     return this.http.get<Res<UserDetail>>(url).pipe(map<Res<UserDetail>, UserDetail>(res => res.data || {}));
   }
 
