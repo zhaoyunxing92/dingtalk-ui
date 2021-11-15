@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {WelcomeComponent} from './welcome.component';
 import {ChatComponent} from "../chat/chat.component";
 import {MandateComponent} from "../mandate/mandate.component";

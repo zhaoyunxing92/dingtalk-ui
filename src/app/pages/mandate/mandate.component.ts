@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Label} from "../../domain/label";
 
 @Component({
   selector: 'app-mandate',
